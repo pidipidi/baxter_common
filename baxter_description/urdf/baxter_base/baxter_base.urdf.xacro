@@ -3,8 +3,14 @@
   <xacro:arg name="gazebo" default="false"/>
   <xacro:if value="$(arg gazebo)">
     <!-- Gazebo Tags -->
-    <xacro:include filename="$(find baxter_description)/urdf/baxter_base/baxter_base.gazebo.xacro" />
+    <xacro:include filename="$(find
+                             baxter_description)/urdf/baxter_base/baxter_base.gazebo.xacro"
+                   />
+    <xacro:include filename="$(find baxter_description)/urdf/baxter_base/baxter_base.transmission.xacro" />
   </xacro:if>
+
+  <xacro:baxter_base_transmission prefix="left" /> 
+  
   <link name="base">
   </link>
   <link name="torso">
